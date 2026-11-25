@@ -1,0 +1,10 @@
+
+{
+  "name": "shroque-cloud-showcase",
+  "version": "1.0.0",
+  "description": "Shroque Cloud Showcase website for Azure App Service",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
