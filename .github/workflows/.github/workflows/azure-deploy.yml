@@ -1,0 +1,41 @@
+
+name: Deploy to Azure App Service
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Azure Login using OIDC
+        uses: azure/login@v2
+        with:
+          client-id: ab558027-a32f-418e-8cef-dba62ca0e9ee
+          tenant-id: 242ccf87-c4ea-4c5e-8206-8ebd4fd66bf6
+          subscription-id: 533e9e85-82df-4054-9a56-70d543f54801
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: shroque-cloud-showcase
+          package: .
