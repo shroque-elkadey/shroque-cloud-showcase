@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shroque Cloud Showcase</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#080d1b;--card:#111a2e;--text:#f4f7ff;--muted:#a8b4ce;--blue:#6ea8fe;--cyan:#62e6df}
+body{font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 15% 20%,#17356b 0,transparent 35%),radial-gradient(circle at 85% 70%,#123c48 0,transparent 30%)}
+nav{max-width:1100px;margin:auto;padding:24px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:800;font-size:20px;letter-spacing:.5px}
+.logo span{color:var(--cyan)}
+nav a{color:var(--muted);text-decoration:none;margin-left:22px;font-size:14px}
+.hero{max-width:1100px;margin:65px auto 90px;padding:24px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.tag{display:inline-block;border:1px solid #31537c;border-radius:30px;padding:7px 14px;color:var(--cyan);font-size:13px;margin-bottom:24px}
+h1{font-size:clamp(42px,6vw,70px);line-height:1.08;letter-spacing:-2px;margin-bottom:24px}
+h1 span{background:linear-gradient(90deg,var(--blue),var(--cyan));-webkit-background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:17px;max-width:560px;margin-bottom:30px}
+.btn{display:inline-block;padding:13px 22px;border-radius:12px;background:linear-gradient(90deg,#4d8cff,#46d9d0);color:#07101c;font-weight:700;text-decoration:none;border:0;cursor:pointer}
+.visual{height:320px;display:grid;place-items:center;position:relative}
+.orbit{width:250px;height:250px;border:1px solid #31537c;border-radius:50%;position:absolute;animation:spin 18s linear infinite}
+.orbit:before,.orbit:after{content:"";position:absolute;width:18px;height:18px;border-radius:50%;background:var(--cyan);box-shadow:0 0 25px var(--cyan)}
+.orbit:before{top:25px;left:35px}.orbit:after{bottom:30px;right:25px;background:var(--blue);box-shadow:0 0 25px var(--blue)}
+.core{width:145px;height:145px;border-radius:35px;background:linear-gradient(145deg,#1b3b67,#102338);display:grid;place-items:center;font-size:58px;box-shadow:0 0 70px #2462a455;animation:float 4s ease-in-out infinite}
+.section{max-width:1100px;margin:0 auto 90px;padding:24px}
+.section-title{text-align:center;margin-bottom:38px}
+.section-title h2{font-size:36px;margin-bottom:10px}
+.section-title p{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:linear-gradient(145deg,#121e34,#0e1628);border:1px solid #263653;border-radius:20px;padding:28px;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-8px);border-color:var(--cyan)}
+.card .emoji{font-size:32px;margin-bottom:18px}
+.card h3{margin-bottom:10px;font-size:20px}
+.card p{color:var(--muted);font-size:14px}
+.banner{border:1px solid #294363;background:#101d31;border-radius:24px;padding:38px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.banner p{color:var(--muted);margin-top:8px}
+footer{text-align:center;padding:28px;color:#8190ad;border-top:1px solid #1e2b43;font-size:13px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@media(max-width:760px){.hero{grid-template-columns:1fr;margin-top:30px}.visual{height:250px}.cards{grid-template-columns:1fr}.banner{flex-direction:column;align-items:flex-start}nav a{margin-left:10px}h1{letter-spacing:-1px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">SHROQUE<span>.</span></div>
+  <div><a href="#services">Cloud Services</a><a href="#about">About</a></div>
+</nav>
+
+<main>
+<section class="hero">
+  <div>
+    <div class="tag">☁ CLOUD • TECHNOLOGY • INNOVATION</div>
+    <h1>Building a smarter <span>cloud future.</span></h1>
+    <p>Welcome to my cloud showcase — a space where modern infrastructure, scalable applications, and cloud technology come together.</p>
+    <a class="btn" href="#services">Explore the Cloud ↓</a>
+  </div>
+  <div class="visual">
+    <div class="orbit"></div>
+    <div class="core">☁</div>
+  </div>
+</section>
+
+<section class="section reveal" id="services">
+  <div class="section-title">
+    <h2>Cloud Services</h2>
+    <p>Explore the building blocks of a modern cloud environment.</p>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <div class="emoji">🌐</div>
+      <h3>Web Applications</h3>
+      <p>Host and publish web applications with managed cloud platforms and reliable public endpoints.</p>
+    </article>
+    <article class="card">
+      <div class="emoji">⚡</div>
+      <h3>Scalable Infrastructure</h3>
+      <p>Adapt application resources to changing workloads through flexible scaling capabilities.</p>
+    </article>
+    <article class="card">
+      <div class="emoji">🔐</div>
+      <h3>Cloud Security</h3>
+      <p>Build secure cloud solutions with identity, access control, and responsible configuration.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section reveal" id="about">
+  <div class="banner">
+    <div>
+      <h2>Ready to explore the cloud?</h2>
+      <p>This website is powered by Azure App Service.</p>
+    </div>
+    <button class="btn" onclick="showMessage()">Check App Status</button>
+  </div>
+  <p id="status" style="text-align:center;color:var(--cyan);margin-top:20px"></p>
+</section>
+</main>
+
+<footer>© 2026 Shroque Cloud Showcase · Built for the cloud ☁</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, {threshold: 0.15});
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+function showMessage() {
+  document.getElementById('status').textContent =
+    '✨ Your cloud showcase is running. Welcome aboard!';
+}
+</script>
+</body>
+</html>
